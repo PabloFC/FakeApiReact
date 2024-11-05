@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import HeroHome from "../components/HeroHome";
+import CategoriesHome from "../components/CategoriesHome";
 
 const Home = () => {
   return (
@@ -9,6 +10,7 @@ const Home = () => {
       <div className="container-fluid">
         <HeroHome />
       </div>
+      <CategoriesHome />
     </>
   );
 };
