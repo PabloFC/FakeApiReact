@@ -10,7 +10,7 @@ const CardCategoriesHome = ({ href, imgSrc, altText, title }) => {
           alt={altText}
           style={{ width: "120% !important" }}
         />
-        <strong className="item_title">{title}</strong>
+        <strong className="categories_title">{title}</strong>
       </div>
     </a>
   );
