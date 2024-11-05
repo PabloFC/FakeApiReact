@@ -1,10 +1,15 @@
 import React from "react";
+import Navbar from "../components/Navbar";
+import HeroHome from "../components/HeroHome";
 
 const Home = () => {
   return (
-    <div>
-      <h1>Esta es la Home</h1>
-    </div>
+    <>
+      <Navbar />
+      <div className="container-fluid">
+        <HeroHome />
+      </div>
+    </>
   );
 };
 

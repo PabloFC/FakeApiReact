@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ------- Index Page ------- */
+
+.logo_responsive {
+  display: none;
+}
+
+.hero {
+  min-height: 30rem;
+  background-image: url("/src/assets/photos/heros/hero_home.jpg");
+  background-size: cover;
+  background-position: center;
+}
