@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import HeroHome from "../components/HeroHome";
 import CategoriesHome from "../components/CategoriesHome";
 import TopProducts from "../components/TopProducts";
+import Services from "../components/Services";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       </div>
       <CategoriesHome />
       <TopProducts />
+      <Services />
     </>
   );
 };
