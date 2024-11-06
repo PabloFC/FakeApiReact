@@ -8,6 +8,26 @@ a {
   text-decoration: none;
 }
 
+.primary_btn {
+  color: white;
+  font-size: 16px;
+  background-color: black;
+  text-decoration: none;
+  border-radius: 10%;
+  padding: 8px;
+  line-height: 24px;
+}
+
+.primary_btn:hover {
+  color: #dcb14a;
+  font-size: 18px;
+  background-color: black;
+  text-decoration: none;
+  border-radius: 10%;
+  padding: 8px;
+  cursor: pointer;
+}
+
 /* ------- Index Page ------- */
 
 .logo_responsive {
@@ -46,5 +66,4 @@ a {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 2px;
 }
