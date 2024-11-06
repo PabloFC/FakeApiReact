@@ -41,3 +41,10 @@ a {
   color: #dcb14a;
   background-color: #ffff;
 }
+
+.top_products {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2px;
+}
