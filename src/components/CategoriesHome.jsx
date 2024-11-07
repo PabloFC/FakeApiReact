@@ -7,43 +7,37 @@ import CardCategoriesHome from "./CardCategoriesHome";
 
 const CategoriesHome = () => {
   return (
-    <section className="pt-5">
-      <div className="text-center">
-        <p className="small text-muted small text-uppercase mb-1">
-          Carefully created collections
-        </p>
-        <h2 className="h5 text-uppercase mb-4">Browse our categories</h2>
-        <div className="container">
-          <div className="card-group">
-            {/* Electronics */}
-            <CardCategoriesHome
-              href="#"
-              imgSrc={electronics_categories}
-              altText="Electronics"
-              title="Electronics"
-            />
-            {/* Jewelry */}
-            <CardCategoriesHome
-              href="#"
-              imgSrc={jewelry_categories}
-              altText="Jewelery"
-              title="Jewelery"
-            />
-            {/* Men */}
-            <CardCategoriesHome
-              href="#"
-              imgSrc={men_categories}
-              altText="Men"
-              title="Men"
-            />
-            {/* Women */}
-            <CardCategoriesHome
-              href="#"
-              imgSrc={women_categories}
-              altText="Women"
-              title="Women"
-            />
-          </div>
+    <section className="py-5">
+      <div className="container">
+        <div className="card-group">
+          {/* Electronics */}
+          <CardCategoriesHome
+            href="#"
+            imgSrc={electronics_categories}
+            altText="Electronics"
+            title="Electronics"
+          />
+          {/* Jewelry */}
+          <CardCategoriesHome
+            href="#"
+            imgSrc={jewelry_categories}
+            altText="Jewelery"
+            title="Jewelery"
+          />
+          {/* Men */}
+          <CardCategoriesHome
+            href="#"
+            imgSrc={men_categories}
+            altText="Men"
+            title="Men"
+          />
+          {/* Women */}
+          <CardCategoriesHome
+            href="#"
+            imgSrc={women_categories}
+            altText="Women"
+            title="Women"
+          />
         </div>
       </div>
     </section>
