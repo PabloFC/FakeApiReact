@@ -51,7 +51,6 @@ const TopProducts = () => {
                 <div className="text-center">
                   <h5 className="card-title py-3">
                     {truncateString(product.title, 18)}
-                    {/* {product.title} */}
                   </h5>
                   <p className="text-muted mb-4">{product.price} €</p>
 

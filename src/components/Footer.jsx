@@ -156,7 +156,7 @@ const Footer = () => {
             <div className="col-12">
               <ul className="nav justify-content-center justify-content-center">
                 <li className="nav-item">
-                  <a className="nav-link link-dark" href="#!">
+                  <a className="nav-link link-dark" href="#">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width={24}
