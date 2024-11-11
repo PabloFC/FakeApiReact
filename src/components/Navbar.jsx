@@ -52,24 +52,24 @@ const Navbar = () => {
                   >
                     Electronics
                   </Link>
-                  <a
+                  <Link
+                    to="/jewelry"
                     className="dropdown-item border-0 transition-link"
-                    href="./jewelery/index.html"
                   >
                     Jewelry
-                  </a>
-                  <a
+                  </Link>
+                  <Link
+                    to="/men"
                     className="dropdown-item border-0 transition-link"
-                    href="./mens/index.html"
                   >
                     Men
-                  </a>
-                  <a
+                  </Link>
+                  <Link
+                    to="/women"
                     className="dropdown-item border-0 transition-link"
-                    href="./womens/index.html"
                   >
                     Women
-                  </a>
+                  </Link>
                 </div>
               </li>
               <li className="nav-item">
@@ -79,11 +79,11 @@ const Navbar = () => {
               </li>
             </ul>
             <div className="logo">
-              <a className="navbar-brand" href="index.html">
+              <Link to="/" className="navbar-brand">
                 <span className="fw-bold text-uppercase text-dark">
                   FAKESTORE
                 </span>
-              </a>
+              </Link>
             </div>
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
