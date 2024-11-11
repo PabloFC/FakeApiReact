@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const CardCategoriesHome = ({ href, imgSrc, altText, title }) => {
+const CardCategoriesHome = ({ to, imgSrc, altText, title }) => {
   return (
-    <a href={href} className="col-12 col-sm-3">
+    <Link to={to} className="col-12 col-sm-3">
       <div className="card mb-1">
         <img
           src={imgSrc}
@@ -12,7 +13,7 @@ const CardCategoriesHome = ({ href, imgSrc, altText, title }) => {
         />
         <strong className="categories_title">{title}</strong>
       </div>
-    </a>
+    </Link>
   );
 };
 

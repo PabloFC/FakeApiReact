@@ -12,7 +12,7 @@ const HeroHome = () => {
             <h1 className="h2 text-uppercase mb-3">
               15% off on new Electronics season
             </h1>
-            <a className="btn btn-dark" href="shop.html">
+            <a className="btn btn-dark" href="#">
               Browse collections
             </a>
           </div>

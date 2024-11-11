@@ -12,28 +12,28 @@ const CategoriesHome = () => {
         <div className="card-group">
           {/* Electronics */}
           <CardCategoriesHome
-            href="#"
+            to="/electronics"
             imgSrc={electronics_categories}
             altText="Electronics"
             title="Electronics"
           />
           {/* Jewelry */}
           <CardCategoriesHome
-            href="#"
+            to="/jewelry"
             imgSrc={jewelry_categories}
             altText="Jewelery"
             title="Jewelery"
           />
           {/* Men */}
           <CardCategoriesHome
-            href="#"
+            to="/men"
             imgSrc={men_categories}
             altText="Men"
             title="Men"
           />
           {/* Women */}
           <CardCategoriesHome
-            href="#"
+            to="/women"
             imgSrc={women_categories}
             altText="Women"
             title="Women"
