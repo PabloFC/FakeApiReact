@@ -15,12 +15,12 @@ const Home = () => {
       <HeroHome />
       <HeaderText
         paragraph="Carefully created collections"
-        mainTitle="Browse our categories"
+        title="Browse our categories"
       />
       <CategoriesHome />
       <HeaderText
         paragraph="Top rated products"
-        mainTitle="Check out our top products"
+        title="Check out our top products"
       />
       <TopProducts />
       <Services />
