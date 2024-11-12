@@ -14,7 +14,7 @@ const Electronics = () => {
       />
       <HeaderText
         paragraph="Carefully created collections"
-        mainTitle="Browse our Products"
+        title="Browse our Products"
       />
     </>
   );
