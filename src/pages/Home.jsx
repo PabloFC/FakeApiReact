@@ -6,6 +6,7 @@ import TopProducts from "../components/TopProducts";
 import Services from "../components/Services";
 import Footer from "../components/Footer";
 import HeaderText from "../components/HeaderText";
+import Newsletter from "../components/Newsletter";
 
 const Home = () => {
   return (
@@ -23,6 +24,7 @@ const Home = () => {
       />
       <TopProducts />
       <Services />
+      <Newsletter />
       <Footer />
     </>
   );
