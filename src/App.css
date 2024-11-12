@@ -67,3 +67,44 @@ a {
   justify-content: center;
   flex-wrap: wrap;
 }
+
+/* -------PRODUCTS PAGE (ELECTRONICS, JEWELERY,MENS, WOMENS)------- */
+.hero_electronics {
+  min-height: 25rem;
+  background-image: url("./assets/photos/heros/electronics_hero.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero_jewelry {
+  min-height: 25rem;
+  background-image: url("./assets/photos/heros/jewelery_hero.jfif");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero_men {
+  min-height: 25rem;
+  background-image: url("./assets/photos/heros/mens_hero.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero_women {
+  min-height: 25rem;
+  background-image: url("./assets/photos/heros/women_hero.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

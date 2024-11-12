@@ -1,10 +1,22 @@
 import React from "react";
+import Navbar from "../components/Navbar";
+import HeroCategories from "../components/HeroCategories";
+import HeaderText from "../components/HeaderText";
 
 const Electronics = () => {
   return (
-    <div>
-      <h1>Electronics</h1>
-    </div>
+    <>
+      <Navbar />
+      <HeroCategories
+        className="hero_electronics"
+        paragraph="find the best price!"
+        title="Electronics"
+      />
+      <HeaderText
+        paragraph="Carefully created collections"
+        mainTitle="Browse our Products"
+      />
+    </>
   );
 };
 

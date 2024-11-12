@@ -1,10 +1,17 @@
 import React from "react";
+import HeroCategories from "../components/HeroCategories";
+import Navbar from "../components/Navbar";
 
 const Jewelry = () => {
   return (
-    <div>
-      <h1>Jewelry</h1>
-    </div>
+    <>
+      <Navbar />
+      <HeroCategories
+        className="hero_jewelry"
+        paragraph=" find the best price!"
+        title="Jewelry"
+      />
+    </>
   );
 };
 

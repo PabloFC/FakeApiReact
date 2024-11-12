@@ -1,10 +1,17 @@
 import React from "react";
+import Navbar from "../components/Navbar";
+import HeroCategories from "../components/HeroCategories";
 
 const Women = () => {
   return (
-    <div>
-      <h1>Women</h1>
-    </div>
+    <>
+      <Navbar />
+      <HeroCategories
+        className="hero_women"
+        paragraph=" find the best price!"
+        title="Women"
+      />
+    </>
   );
 };
 
