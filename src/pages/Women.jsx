@@ -1,12 +1,10 @@
 import React from "react";
-import Navbar from "../components/Navbar";
 import HeroCategories from "../components/HeroCategories";
 import HeaderText from "../components/HeaderText";
 
 const Women = () => {
   return (
     <>
-      <Navbar />
       <HeroCategories
         className="hero_women"
         paragraph=" find the best price!"

@@ -6,10 +6,12 @@ import Electronics from "../pages/Electronics";
 import Jewelry from "../pages/Jewelry";
 import Men from "../pages/Men";
 import Women from "../pages/Women";
+import Navbar from "../components/Navbar";
 
 const AppRoute = () => {
   return (
     <BrowserRouter>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/electronics" element={<Electronics />} />
