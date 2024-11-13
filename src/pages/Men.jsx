@@ -1,11 +1,11 @@
 import React from "react";
-import Navbar from "../components/Navbar";
+// import Navbar from "../components/Navbar";
 import HeroCategories from "../components/HeroCategories";
 import HeaderText from "../components/HeaderText";
 const Men = () => {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <HeroCategories
         className="hero_men"
         paragraph=" find the best price!"

@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 
-const TopProducts = () => {
+const TopProducts = ({ addToCart }) => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -54,9 +54,12 @@ const TopProducts = () => {
                   </h5>
                   <p className="text-muted mb-4">{product.price} €</p>
 
-                  <a className="primary_btn" href="#">
+                  <button
+                    className="primary_btn"
+                    onClick={() => addToCart(product)}
+                  >
                     Add to cart
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>

@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "../components/Navbar";
 import HeroHome from "../components/HeroHome";
 import CategoriesHome from "../components/CategoriesHome";
 import TopProducts from "../components/TopProducts";
@@ -11,7 +10,6 @@ import Newsletter from "../components/Newsletter";
 const Home = () => {
   return (
     <>
-      <Navbar />
       <HeroHome />
       <HeaderText
         paragraph="Carefully created collections"
