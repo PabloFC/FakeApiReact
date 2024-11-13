@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-import React from "react";
+import React, { useReducer } from "react";
 import Home from "../pages/Home";
 import Electronics from "../pages/Electronics";
 import Jewelry from "../pages/Jewelry";
@@ -14,6 +13,7 @@ const AppRoute = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+
         <Route path="/electronics" element={<Electronics />} />
         <Route path="/jewelry" element={<Jewelry />} />
         <Route path="/men" element={<Men />} />
