@@ -67,9 +67,9 @@ const ProductsCard = () => {
                         <button className="btn-primario" type="button">
                           Add to cart
                         </button>
-                        <button className="btn btn-light" type="button">
+                        {/* <button className="btn btn-light" type="button">
                           Add to wish list
-                        </button>
+                        </button> */}
                       </div>
                     </div>
                   </div>
