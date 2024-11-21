@@ -7,7 +7,7 @@ const Men = () => {
     <>
       <HeroCategories
         className="hero_men"
-        paragraph=" find the best price!"
+        paragraph="find the best price!"
         title="Men"
       />
       <HeaderText

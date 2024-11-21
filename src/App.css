@@ -108,3 +108,8 @@ a {
   justify-content: center;
   align-items: center;
 }
+
+.img_products {
+  height: 150px;
+  width: 150px;
+}
