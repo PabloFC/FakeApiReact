@@ -64,12 +64,9 @@ const ProductsCard = () => {
                         <h4 className="mb-1 me-1">{product.price}€</h4>
                       </div>
                       <div className="d-flex flex-column mt-2">
-                        <button className="btn-primario" type="button">
+                        <button className="primary_btn" type="button">
                           Add to cart
                         </button>
-                        {/* <button className="btn btn-light" type="button">
-                          Add to wish list
-                        </button> */}
                       </div>
                     </div>
                   </div>
