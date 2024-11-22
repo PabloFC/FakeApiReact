@@ -35,7 +35,7 @@ const ProductsCard = () => {
                 <div className="card-body">
                   <div className="row">
                     <div className="col-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
-                      <div className="bg-image hover-zoom ripple rounded ripple-surface">
+                      <div className="bg-image hover-zoom ripple rounded ripple-surface text-center">
                         <img
                           src={product.image}
                           alt={product.title}
