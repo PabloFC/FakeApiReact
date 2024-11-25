@@ -6,6 +6,7 @@ import Jewelry from "../pages/Jewelry";
 import Men from "../pages/Men";
 import Women from "../pages/Women";
 import Navbar from "../components/Navbar";
+import Cart from "../pages/Cart";
 
 const AppRoute = () => {
   return (
@@ -17,6 +18,7 @@ const AppRoute = () => {
         <Route path="/jewelry" element={<Jewelry />} />
         <Route path="/men" element={<Men />} />
         <Route path="/women" element={<Women />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </BrowserRouter>
   );

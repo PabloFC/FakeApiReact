@@ -87,10 +87,10 @@ const Navbar = () => {
             </div>
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
-                <a className="nav-link" href="cart.html">
+                <Link to="/cart" className="nav-link" href="cart.html">
                   <i className="fas fa-dolly-flatbed me-1 text-gray" />
                   Cart<small className="text-gray fw-normal">(2)</small>
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#!">
