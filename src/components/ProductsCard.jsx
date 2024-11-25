@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 
-const ProductsCard = () => {
+const ProductsCard = ({ category }) => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://fakestoreapi.com/products/category/electronics"
+          `https://fakestoreapi.com/products/category/${category}`
         );
         const data = await response.json();
         setProducts(data);

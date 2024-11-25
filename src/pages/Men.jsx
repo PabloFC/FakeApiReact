@@ -14,7 +14,7 @@ const Men = () => {
         paragraph="Carefully created collections"
         title="Browse our Products"
       />
-      <ProductsCard />
+      <ProductsCard category="men's clothing" />
     </>
   );
 };

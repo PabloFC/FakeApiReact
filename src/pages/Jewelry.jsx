@@ -15,7 +15,7 @@ const Jewelry = () => {
         paragraph="Carefully created collections"
         title="Browse our Products"
       />
-      <ProductsCard />
+      <ProductsCard category="jewelery" />
     </>
   );
 };

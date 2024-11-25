@@ -15,7 +15,7 @@ const Electronics = () => {
         paragraph="Carefully created collections"
         title="Browse our Products"
       />
-      <ProductsCard />
+      <ProductsCard category="electronics" />
     </>
   );
 };
