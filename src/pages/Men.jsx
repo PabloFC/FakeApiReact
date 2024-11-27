@@ -2,6 +2,8 @@ import React from "react";
 import HeroCategories from "../components/HeroCategories";
 import HeaderText from "../components/HeaderText";
 import ProductsCard from "../components/ProductsCard";
+import Services from "../components/Services";
+import Newsletter from "../components/Newsletter";
 const Men = () => {
   return (
     <>
@@ -15,6 +17,8 @@ const Men = () => {
         title="Browse our Products"
       />
       <ProductsCard category="men's clothing" />
+      <Services />
+      <Newsletter />
     </>
   );
 };
