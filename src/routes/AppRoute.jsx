@@ -7,6 +7,7 @@ import Men from "../pages/Men";
 import Women from "../pages/Women";
 import Navbar from "../components/Navbar";
 import Cart from "../pages/Cart";
+import Footer from "../components/Footer";
 
 const AppRoute = () => {
   return (
@@ -20,6 +21,7 @@ const AppRoute = () => {
         <Route path="/women" element={<Women />} />
         <Route path="/cart" element={<Cart />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 };
