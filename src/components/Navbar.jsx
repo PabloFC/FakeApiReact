@@ -27,9 +27,9 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto">
               <li className="nav-item">
-                <a className="nav-link" href="#topProducts">
+                <Link to="/#topProducts" className="nav-link">
                   Top Products
-                </a>
+                </Link>
               </li>
               <li className="nav-item dropdown">
                 <a

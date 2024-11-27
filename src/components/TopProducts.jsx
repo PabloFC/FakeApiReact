@@ -27,7 +27,7 @@ const TopProducts = () => {
 
   return (
     <main className="py-5">
-      <div className=" container top_products">
+      <div className="container top_products">
         {products.map((product) => (
           <div className="col-12 col-sm-3" key={product.id}>
             <div
