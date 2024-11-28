@@ -33,6 +33,13 @@ a {
 .logo_responsive {
   display: none;
 }
+.nav-link {
+  color: black;
+  font-weight: bold;
+}
+.nav-link:hover {
+  color: #dcb14a;
+}
 
 .hero {
   min-height: 30rem;
