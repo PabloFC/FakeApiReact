@@ -90,7 +90,6 @@ a {
   min-height: 25rem;
   background-image: url("./assets/photos/heros/jewelery_hero.jfif");
   background-size: cover;
-  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -110,7 +109,6 @@ a {
   min-height: 25rem;
   background-image: url("./assets/photos/heros/women_hero.jpg");
   background-size: cover;
-  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -119,4 +117,17 @@ a {
 .img_products {
   height: 150px;
   width: 150px;
+}
+
+/* MOBILE FIRST */
+@media only screen and (max-width: 992px) {
+  .hero_electronics {
+    background-position: left;
+  }
+  .logo_responsive {
+    display: block;
+  }
+  .logo {
+    display: none;
+  }
 }

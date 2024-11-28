@@ -4,7 +4,10 @@ const HeroCategories = ({ paragraph, title, className }) => {
   return (
     <section className={`${className}`}>
       <div>
-        <p className="text-uppercase text-center" style={{ color: "#dcb14a" }}>
+        <p
+          className="text-uppercase text-center fw-bold"
+          style={{ color: "#dcb14a" }}
+        >
           {paragraph}
         </p>
         <h1 className="h2 text-uppercase mb-3 text-white text-center">
