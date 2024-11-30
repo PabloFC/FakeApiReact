@@ -11,6 +11,7 @@ const CartProvider = ({ children }) => {
       const existingCartItem = currentCart.find(
         (cartItem) => cartItem.id === newProduct.id
       );
+
       if (existingCartItem) {
         return currentCart.map((cartItem) =>
           cartItem.id === newProduct.id
@@ -23,8 +24,12 @@ const CartProvider = ({ children }) => {
     setTotal((currentTotal) => currentTotal + newProduct.price);
   };
 
+  const getCartCount = () => {
+    return cart.reduce((total, item) => total + item.quantity, 0);
+  };
+
   return (
-    <CartContext.Provider value={{ cart, addToCart }}>
+    <CartContext.Provider value={{ cart, total, addToCart, getCartCount }}>
       {children}
     </CartContext.Provider>
   );
