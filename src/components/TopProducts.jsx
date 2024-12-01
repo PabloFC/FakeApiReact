@@ -1,8 +1,10 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { useCartContext } from "../store/CartContext";
 
 const TopProducts = () => {
   const [products, setProducts] = useState([]);
+  const { addToCart } = useCartContext();
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -54,7 +56,13 @@ const TopProducts = () => {
                   </h5>
                   <p className="text-muted mb-4">{product.price} €</p>
 
-                  <button className="primary_btn">Add to cart</button>
+                  <button
+                    className="primary_btn"
+                    type="button"
+                    onClick={() => addToCart(product)}
+                  >
+                    Add to cart
+                  </button>
                 </div>
               </div>
             </div>
