@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
-
+import Swal from "sweetalert2";
+import { useCartContext } from "../store/CartContext";
 const ProductsCard = ({ category }) => {
   const [products, setProducts] = useState([]);
+  const { addToCart } = useCartContext();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -21,6 +23,16 @@ const ProductsCard = ({ category }) => {
   function truncateString(str, maxLength) {
     return str.length > maxLength ? str.substring(0, maxLength) + "..." : str;
   }
+
+  const handleAddToCart = (product) => {
+    addToCart(product);
+    Swal.fire({
+      title: "Success!",
+      text: "Product added to cart!",
+      icon: "success",
+      confirmButtonText: "OK",
+    });
+  };
 
   return (
     <div id="electronics">
@@ -64,7 +76,11 @@ const ProductsCard = ({ category }) => {
                         <h4 className="mb-1 me-1">{product.price}€</h4>
                       </div>
                       <div className="d-flex flex-column mt-2">
-                        <button className="primary_btn" type="button">
+                        <button
+                          className="primary_btn"
+                          type="button"
+                          onClick={() => handleAddToCart(product)}
+                        >
                           Add to cart
                         </button>
                       </div>

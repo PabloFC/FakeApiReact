@@ -1,4 +1,5 @@
 import React from "react";
+import Swal from "sweetalert2";
 import { useState, useEffect } from "react";
 import { useCartContext } from "../store/CartContext";
 
@@ -27,6 +28,15 @@ const TopProducts = () => {
     return str.length > maxLength ? str.substring(0, maxLength) + "..." : str;
   };
 
+  const handleAddToCart = (product) => {
+    addToCart(product);
+    Swal.fire({
+      title: "Success!",
+      text: "Product added to cart!",
+      icon: "success",
+      confirmButtonText: "OK",
+    });
+  };
   return (
     <main className="py-5">
       <div className="container top_products">
@@ -59,7 +69,7 @@ const TopProducts = () => {
                   <button
                     className="primary_btn"
                     type="button"
-                    onClick={() => addToCart(product)}
+                    onClick={() => handleAddToCart(product)}
                   >
                     Add to cart
                   </button>
