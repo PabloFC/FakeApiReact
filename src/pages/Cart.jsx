@@ -1,10 +1,9 @@
 import React from "react";
-
-import { Link } from "react-router-dom"; // NUEVO: Importar Link para navegación
+import { Link } from "react-router-dom";
 import { useCartContext } from "../store/CartContext";
 
 const Cart = () => {
-  const { cart, total } = useCartContext();
+  const { cart, total, removeFromCart } = useCartContext();
 
   if (cart.length === 0) {
     return (
@@ -22,7 +21,7 @@ const Cart = () => {
     <div className="cart-page">
       <h2>Your Cart</h2>
       {cart.map((item) => (
-        <div key={item.id} className="cart-item">
+        <div key={item.id}>
           <img
             src={item.image}
             alt={item.title}
@@ -31,7 +30,12 @@ const Cart = () => {
           <span>{item.title}</span>
           <span>Quantity: {item.quantity}</span>
           <span>€{(item.price * item.quantity).toFixed(2)}</span>
-          <button className="btn btn-danger">Remove</button>
+          <button
+            onClick={() => removeFromCart(item.id)}
+            className="btn btn-danger"
+          >
+            Remove
+          </button>
         </div>
       ))}
       <div className="cart-total">

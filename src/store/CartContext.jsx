@@ -24,12 +24,31 @@ export const CartProvider = ({ children }) => {
     setTotal((currentTotal) => currentTotal + newProduct.price);
   };
 
+  const removeFromCart = (productId) => {
+    setCart((currentCart) => {
+      const updatedCart = currentCart.filter(
+        (cartItem) => cartItem.id !== productId
+      );
+      const removedItem = currentCart.find(
+        (cartItem) => cartItem.id === productId
+      );
+      if (removedItem) {
+        setTotal(
+          (prevTotal) => prevTotal - removedItem.price * removedItem.quantity
+        );
+      }
+      return updatedCart;
+    });
+  };
+
   const getCartCount = () => {
     return cart.reduce((total, item) => total + item.quantity, 0);
   };
 
   return (
-    <CartContext.Provider value={{ cart, total, addToCart, getCartCount }}>
+    <CartContext.Provider
+      value={{ cart, total, addToCart, getCartCount, removeFromCart }}
+    >
       {children}
     </CartContext.Provider>
   );
