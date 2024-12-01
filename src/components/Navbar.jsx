@@ -1,7 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useCartContext } from "../store/CartContext";
 
 const Navbar = () => {
+  const { getCartCount } = useCartContext();
+
   return (
     <header className="bg-white">
       <div className="container px-lg-3">
@@ -87,14 +90,15 @@ const Navbar = () => {
             </div>
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
-                <Link to="/cart" className="nav-link" href="cart.html">
-                  <i className="fas fa-dolly-flatbed me-1 text-gray" />
-                  Cart<small className="text-gray fw-normal">(2)</small>
+                <Link to="/cart" className="nav-link">
+                  Cart
+                  <small className="text-gray fw-normal">
+                    ({getCartCount()})
+                  </small>
                 </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#!">
-                  <i className="fas fa-user me-1 text-gray fw-normal" />
+                <a className="nav-link" href="#">
                   Login
                 </a>
               </li>
