@@ -1,5 +1,6 @@
 import React from "react";
 import Swal from "sweetalert2";
+import "animate.css";
 import { useState, useEffect } from "react";
 import { useCartContext } from "../store/CartContext";
 
@@ -31,10 +32,27 @@ const TopProducts = () => {
   const handleAddToCart = (product) => {
     addToCart(product);
     Swal.fire({
-      title: "Success!",
-      text: "Product added to cart!",
+      imageUrl: product.image,
+      imageHeight: 120,
+      imageWidth: 120,
+      title: "Product added to cart!",
       icon: "success",
       confirmButtonText: "OK",
+      confirmButtonColor: "#dcb14a",
+      showClass: {
+        popup: `
+          animate__animated
+          animate__fadeInUp
+          animate__faster
+        `,
+      },
+      hideClass: {
+        popup: `
+          animate__animated
+          animate__fadeOutDown
+          animate__faster
+        `,
+      },
     });
   };
   return (
