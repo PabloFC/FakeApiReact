@@ -7,7 +7,7 @@ const Cart = () => {
 
   if (cart.length === 0) {
     return (
-      <div>
+      <div className="cart-container">
         <h1 style={{ color: "red" }}>Cart in progress</h1>
         <h2>Your cart is empty</h2>
         <p>There are no products selected.</p>
@@ -19,8 +19,8 @@ const Cart = () => {
   }
 
   return (
-    <div className="cart-page">
-      <h1>Cart in progress</h1>
+    <div className="cart-container">
+      <h1 style={{ color: "red" }}>Cart in progress</h1>
 
       <h2>Your Cart</h2>
       {cart.map((item) => (

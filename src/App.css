@@ -3,7 +3,26 @@
   margin: 0;
   padding: 0;
 }
+/* ------ FOOTER------ */
+html,
+body {
+  height: 100%;
+}
 
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.cart-container {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex-shrink: 0;
+}
+/* ------------ */
 a {
   text-decoration: none;
 }
@@ -20,11 +39,7 @@ a {
 
 .primary_btn:hover {
   color: #dcb14a;
-  font-size: 20px;
-  background-color: black;
-  text-decoration: none;
   border-radius: 10%;
-  padding: 12px;
   cursor: pointer;
 }
 
