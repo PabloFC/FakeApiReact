@@ -10,7 +10,7 @@ const Cart = () => {
       <div className="cart-container d-flex flex-column align-items-center container py-5 h-100">
         <h1>Your cart is empty</h1>
         <h6 className="py-3">There are no products selected.</h6>
-        <Link to="/" className="secondary_btn">
+        <Link to="/#topProducts" className="secondary_btn">
           Continue Shopping
         </Link>
       </div>
