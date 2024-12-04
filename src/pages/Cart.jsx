@@ -20,30 +20,170 @@ const Cart = () => {
 
   return (
     <div className="cart-container">
-      <h1 style={{ color: "red" }}>Cart in progress</h1>
+      <section className="h-100 h-custom">
+        <div className="container py-5 h-100">
+          <div className="row d-flex justify-content-center align-items-center h-100">
+            <div className="col-12">
+              <div
+                className="card card-registration card-registration-2"
+                style={{ borderRadius: 15 }}
+              >
+                <div className="card-body p-0">
+                  <div className="row g-0">
+                    <div className="col-lg-8">
+                      <div className="p-5">
+                        <div className="d-flex justify-content-between align-items-center mb-5">
+                          <h1 className="fw-bold mb-0">Shopping Cart</h1>
+                          <h6 className="mb-0 text-muted">
+                            {cart.length} items
+                          </h6>
+                        </div>
+                        <hr className="my-4" />
+                        {cart.map((item) => (
+                          <div
+                            key={item.id}
+                            className="row mb-4 d-flex justify-content-between align-items-center"
+                          >
+                            <div className="col-md-2 col-lg-2 col-xl-2">
+                              <img
+                                src={item.image}
+                                className="img-fluid rounded-3"
+                                alt={item.title}
+                              />
+                            </div>
+                            <div className="col-md-3 col-lg-3 col-xl-3">
+                              <h6 className="text-muted">{item.category}</h6>
+                              <h6 className="mb-0">{item.title}</h6>
+                            </div>
+                            <div className="col-md-3 col-lg-3 col-xl-2 d-flex">
+                              <button
+                                className="btn btn-link px-2"
+                                onClick={() =>
+                                  updateQuantity(item.id, item.quantity - 1)
+                                }
+                              ></button>
+                              <input
+                                type="number"
+                                className="form-control form-control-sm"
+                                value={item.quantity}
+                                readOnly
+                              />
+                              <button
+                                className="btn btn-link px-2"
+                                onClick={() =>
+                                  updateQuantity(item.id, item.quantity + 1)
+                                }
+                              ></button>
+                            </div>
+                            <div className="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                              <h6 className="mb-0">
+                                € {(item.price * item.quantity).toFixed(2)}
+                              </h6>
+                            </div>
+                            <div className="col-md-1 col-lg-1 col-xl-1 text-end">
+                              <a
+                                href="#"
+                                className="text-muted"
+                                onClick={() => removeFromCart(item.id)}
+                              >
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="24"
+                                  height="24"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  strokeWidth="2"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  className="icon icon-tabler icons-tabler-outline icon-tabler-x"
+                                >
+                                  <path
+                                    stroke="none"
+                                    d="M0 0h24v24H0z"
+                                    fill="none"
+                                  />
+                                  <path d="M18 6l-12 12" />
+                                  <path d="M6 6l12 12" />
+                                </svg>
+                              </a>
+                            </div>
+                          </div>
+                        ))}
+                        <hr className="my-4" />
+                        <div className="pt-5">
+                          <h6 className="mb-0">
+                            <Link to="/" className="text-body">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                className="icon icon-tabler icons-tabler-outline icon-tabler-arrow-narrow-left"
+                              >
+                                <path
+                                  stroke="none"
+                                  d="M0 0h24v24H0z"
+                                  fill="none"
+                                />
+                                <path d="M5 12l14 0" />
+                                <path d="M5 12l4 4" />
+                                <path d="M5 12l4 -4" />
+                              </svg>
+                              Back to shop
+                            </Link>
+                          </h6>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-lg-4 bg-body-tertiary">
+                      <div className="p-5">
+                        <h3 className="fw-bold mb-5 mt-2 pt-1">Summary</h3>
+                        <hr className="my-4" />
+                        <div className="d-flex justify-content-between mb-4">
+                          <h5 className="text-uppercase">
+                            {cart.length} items
+                          </h5>
+                          <h5>€ {total.toFixed(2)}</h5>
+                        </div>
+                        <h5 className="text-uppercase mb-3">Shipping</h5>
+                        <div className="mb-4 pb-2">
+                          <select data-mdb-select-init="">
+                            <option value={1}>Standard-Delivery- €5.00</option>
+                            <option value={2}>Two</option>
+                            <option value={3}>Three</option>
+                            <option value={4}>Four</option>
+                          </select>
+                        </div>
 
-      <h2>Your Cart</h2>
-      {cart.map((item) => (
-        <div key={item.id}>
-          <img
-            src={item.image}
-            alt={item.title}
-            style={{ width: "50px", height: "50px" }}
-          />
-          <span>{item.title}</span>
-          <span>Quantity: {item.quantity}</span>
-          <span>€{(item.price * item.quantity).toFixed(2)}</span>
-          <button
-            onClick={() => removeFromCart(item.id)}
-            className="btn btn-danger"
-          >
-            Remove
-          </button>
+                        <hr className="my-4" />
+                        <div className="d-flex justify-content-between mb-5">
+                          <h5 className="text-uppercase">Total price</h5>
+                          <h5>€ {(total + 5).toFixed(2)}</h5>
+                        </div>
+                        <button
+                          type="button"
+                          data-mdb-button-init=""
+                          data-mdb-ripple-init=""
+                          className="btn btn-dark btn-block btn-lg"
+                          data-mdb-ripple-color="dark"
+                        >
+                          Buy now
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      ))}
-      <div className="cart-total">
-        <strong>Total: €{total.toFixed(2)}</strong>
-      </div>
+      </section>
     </div>
   );
 };
