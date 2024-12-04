@@ -37,9 +37,25 @@ a {
   line-height: 24px;
 }
 
+.secondary_btn {
+  color: white;
+  font-size: 20px;
+  background-color: #dcb14a;
+  text-decoration: none;
+  border-radius: 8%;
+  padding: 12px;
+  line-height: 24px;
+}
+
 .primary_btn:hover {
   color: #dcb14a;
   border-radius: 10%;
+  cursor: pointer;
+}
+
+.secondary_btn:hover {
+  color: black;
+  border-radius: 8%;
   cursor: pointer;
 }
 
@@ -133,14 +149,8 @@ a {
   height: 150px;
   width: 150px;
 }
-/* 
-CART PAGE */
 
-@media (min-width: 1025px) {
-  .h-custom {
-    height: 100vh !important;
-  }
-}
+/* CART PAGE */
 
 .card-registration .select-input.form-control[readonly]:not([disabled]) {
   font-size: 1rem;
@@ -164,4 +174,15 @@ CART PAGE */
   .logo {
     display: none;
   }
+}
+
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+  font-size: 1rem;
+  line-height: 2.15;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+}
+
+.card-registration .select-arrow {
+  top: 13px;
 }

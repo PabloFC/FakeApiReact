@@ -7,11 +7,10 @@ const Cart = () => {
 
   if (cart.length === 0) {
     return (
-      <div className="cart-container">
-        <h1 style={{ color: "red" }}>Cart in progress</h1>
-        <h2>Your cart is empty</h2>
-        <p>There are no products selected.</p>
-        <Link to="/" className="btn btn-primary">
+      <div className="cart-container d-flex flex-column align-items-center container py-5 h-100">
+        <h1>Your cart is empty</h1>
+        <h6 className="py-3">There are no products selected.</h6>
+        <Link to="/" className="secondary_btn">
           Continue Shopping
         </Link>
       </div>
@@ -24,10 +23,7 @@ const Cart = () => {
         <div className="container py-5 h-100">
           <div className="row d-flex justify-content-center align-items-center h-100">
             <div className="col-12">
-              <div
-                className="card card-registration card-registration-2"
-                style={{ borderRadius: 15 }}
-              >
+              <div className="card card-registration card-registration-2 ">
                 <div className="card-body p-0">
                   <div className="row g-0">
                     <div className="col-lg-8">
@@ -77,7 +73,7 @@ const Cart = () => {
                             </div>
                             <div className="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
                               <h6 className="mb-0">
-                                € {(item.price * item.quantity).toFixed(2)}
+                                {(item.price * item.quantity).toFixed(2)} €
                               </h6>
                             </div>
                             <div className="col-md-1 col-lg-1 col-xl-1 text-end">
@@ -108,9 +104,9 @@ const Cart = () => {
                                 </svg>
                               </a>
                             </div>
+                            <hr className="my-4"></hr>
                           </div>
                         ))}
-                        <hr className="my-4" />
                         <div className="pt-5">
                           <h6 className="mb-0">
                             <Link to="/" className="text-body">
@@ -170,7 +166,7 @@ const Cart = () => {
                           type="button"
                           data-mdb-button-init=""
                           data-mdb-ripple-init=""
-                          className="btn btn-dark btn-block btn-lg"
+                          className="primary_btn btn-block btn-lg"
                           data-mdb-ripple-color="dark"
                         >
                           Buy now
