@@ -85,7 +85,7 @@ const TopProducts = () => {
                   <p className="text-muted mb-4">{product.price} €</p>
 
                   <button
-                    className="primary_btn"
+                    className="btn btn-dark"
                     type="button"
                     onClick={() => handleAddToCart(product)}
                   >

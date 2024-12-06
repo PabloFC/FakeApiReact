@@ -95,7 +95,7 @@ const ProductsCard = ({ category }) => {
                       </div>
                       <div className="d-flex flex-column mt-2">
                         <button
-                          className="primary_btn"
+                          className="btn btn-dark"
                           type="button"
                           onClick={() => handleAddToCart(product)}
                         >

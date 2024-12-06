@@ -166,7 +166,7 @@ const Cart = () => {
                           type="button"
                           data-mdb-button-init=""
                           data-mdb-ripple-init=""
-                          className="primary_btn btn-block btn-lg"
+                          className="btn btn-dark btn-lg btn-block "
                           data-mdb-ripple-color="dark"
                         >
                           Buy now
