@@ -7,10 +7,10 @@ const HeroHome = () => {
       <div className="container py-5">
         <div className="row px-4 px-lg-5">
           <div className="col-lg-6">
-            <p className="text-muted small text-uppercase mb-2">
+            <p className="text-muted small text-uppercase mb-2 hero_paragraph">
               New Inspiration 2024
             </p>
-            <h1 className="h2 text-uppercase mb-3">
+            <h1 className="h2 text-uppercase mb-3 hero_h1">
               15% off on new Electronics season
             </h1>
             <Link to="/electronics" className="btn btn-dark">

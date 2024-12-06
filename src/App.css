@@ -164,8 +164,18 @@ a {
 /* MOBILE FIRST */
 @media only screen and (max-width: 576px) {
   .imgMobile {
-    width: 250px;
-    height: 300px;
+    width: 150px;
+    height: 150px;
+  }
+  .hero {
+    background-position: 650px;
+  }
+  .hero_paragraph {
+    color: black !important;
+    font-weight: bold;
+  }
+  .hero_h1 {
+    color: #dcb14a;
   }
 }
 @media only screen and (max-width: 992px) {

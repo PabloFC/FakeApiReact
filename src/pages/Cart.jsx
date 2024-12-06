@@ -47,8 +47,11 @@ const Cart = () => {
                                 alt={item.title}
                               />
                             </div>
-                            <div className="col-md-3 col-lg-3 col-xl-3 mt-2 mt-md-0">
-                              <h6 className="text-muted">{item.category}</h6>
+                            <div className="col-md-3 col-lg-3 col-xl-3 mt-3 mt-md-0">
+                              <h6 className="text-muted">
+                                {item.category.charAt(0).toUpperCase() +
+                                  item.category.slice(1)}
+                              </h6>
                               <h6 className="mb-0">{item.title}</h6>
                             </div>
                             <div className="col-md-3 col-lg-3 col-xl-2">
