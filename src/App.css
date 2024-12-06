@@ -162,6 +162,12 @@ a {
 }
 
 /* MOBILE FIRST */
+@media only screen and (max-width: 576px) {
+  .imgMobile {
+    width: 250px;
+    height: 300px;
+  }
+}
 @media only screen and (max-width: 992px) {
   .hero_electronics {
     background-position: left;

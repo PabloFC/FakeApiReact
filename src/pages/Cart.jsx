@@ -7,7 +7,7 @@ const Cart = () => {
 
   if (cart.length === 0) {
     return (
-      <div className="cart-container d-flex flex-column align-items-center container py-5 h-100">
+      <div className="cart-container  d-flex flex-column align-items-center container py-5 h-100">
         <h1>Your cart is empty</h1>
         <h6 className="py-3">There are no products selected.</h6>
         <Link to="/#topProducts" className="secondary_btn">
@@ -43,24 +43,24 @@ const Cart = () => {
                             <div className="col-md-2 col-lg-2 col-xl-2">
                               <img
                                 src={item.image}
-                                className="img-fluid rounded-3"
+                                className="img-fluid rounded-3 imgMobile"
                                 alt={item.title}
                               />
                             </div>
-                            <div className="col-md-3 col-lg-3 col-xl-3">
+                            <div className="col-md-3 col-lg-3 col-xl-3 mt-2 mt-md-0">
                               <h6 className="text-muted">{item.category}</h6>
                               <h6 className="mb-0">{item.title}</h6>
                             </div>
-                            <div className="col-md-3 col-lg-3 col-xl-2 d-flex">
+                            <div className="col-md-3 col-lg-3 col-xl-2">
                               <button
-                                className="btn btn-link px-2"
+                                className="btn btn-link px-2 "
                                 onClick={() =>
                                   updateQuantity(item.id, item.quantity - 1)
                                 }
                               ></button>
                               <input
                                 type="number"
-                                className="form-control form-control-sm"
+                                className="form-control form-control-sm "
                                 value={item.quantity}
                                 readOnly
                               />
