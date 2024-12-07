@@ -40,6 +40,34 @@ const Cart = () => {
                             key={item.id}
                             className="row mb-4 d-flex justify-content-between align-items-center"
                           >
+                            <div className="d-md-none col-md-1 col-lg-1 col-xl-1 text-end">
+                              <a
+                                href="#"
+                                className="text-muted"
+                                onClick={() => removeFromCart(item.id)}
+                              >
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="24"
+                                  height="24"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  strokeWidth="2"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  className="icon icon-tabler icons-tabler-outline icon-tabler-x"
+                                >
+                                  <path
+                                    stroke="none"
+                                    d="M0 0h24v24H0z"
+                                    fill="none"
+                                  />
+                                  <path d="M18 6l-12 12" />
+                                  <path d="M6 6l12 12" />
+                                </svg>
+                              </a>
+                            </div>
                             <div className="col-md-2 col-lg-2 col-xl-2">
                               <img
                                 src={item.image}
@@ -52,34 +80,34 @@ const Cart = () => {
                                 {item.category.charAt(0).toUpperCase() +
                                   item.category.slice(1)}
                               </h6>
-                              <h6 className="mb-0">{item.title}</h6>
+                              <h6 className="mb-4">{item.title}</h6>
                             </div>
                             <div className="col-md-3 col-lg-3 col-xl-2">
-                              <button
+                              {/* <button
                                 className="btn btn-link px-2 "
                                 onClick={() =>
                                   updateQuantity(item.id, item.quantity - 1)
                                 }
-                              ></button>
+                              ></button> */}
                               <input
                                 type="number"
-                                className="form-control form-control-sm "
+                                className="form-control form-control-sm mb-4"
                                 value={item.quantity}
                                 readOnly
                               />
-                              <button
+                              {/* <button
                                 className="btn btn-link px-2"
                                 onClick={() =>
                                   updateQuantity(item.id, item.quantity + 1)
                                 }
-                              ></button>
+                              ></button> */}
                             </div>
                             <div className="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
                               <h6 className="mb-0">
                                 {(item.price * item.quantity).toFixed(2)} €
                               </h6>
                             </div>
-                            <div className="col-md-1 col-lg-1 col-xl-1 text-end">
+                            <div className="d-none d-md-block col-md-1 col-lg-1 col-xl-1 text-end">
                               <a
                                 href="#"
                                 className="text-muted"
