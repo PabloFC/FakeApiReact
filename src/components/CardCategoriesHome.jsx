@@ -5,12 +5,7 @@ const CardCategoriesHome = ({ to, imgSrc, altText, title }) => {
   return (
     <Link to={to} className="col-12 col-sm-3">
       <div className="card mb-1">
-        <img
-          src={imgSrc}
-          className="card-img-top"
-          alt={altText}
-          style={{ width: "120% !important" }}
-        />
+        <img src={imgSrc} className="card-img-top" alt={altText} />
         <strong className="categories_title">{title}</strong>
       </div>
     </Link>
