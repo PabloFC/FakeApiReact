@@ -54,13 +54,13 @@ body {
   background: rgba(0, 0, 0, 0.3);
   color: white;
   text-transform: uppercase;
-  letter-spacing: 0.07em;
+  letter-spacing: 0.08em;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.04);
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 .categories_title:hover {
