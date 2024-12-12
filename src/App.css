@@ -27,15 +27,9 @@ a {
   text-decoration: none;
 }
 
-/* .primary_btn {
-  color: white;
-  font-size: 20px;
-  background-color: #1a1a1a;
-  text-decoration: none;
-  border-radius: 8%;
-  padding: 12px;
-  line-height: 24px;
-} */
+.text-gold {
+  color: #dcb14a;
+}
 
 .secondary_btn {
   background-color: #dcb14a;
@@ -46,12 +40,6 @@ a {
   border-radius: 0.25rem;
   box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
 }
-
-/* .primary_btn:hover {
-  color: #dcb14a;
-  border-radius: 10%;
-  cursor: pointer;
-} */
 
 .secondary_btn:hover {
   background-color: #c89c3d;

@@ -4,17 +4,12 @@ const Footer = () => {
   return (
     <footer className="footer" id="contact">
       {/* Widgets - Bootstrap Brain Component */}
-      <section
-        className="py-4 py-md-5 py-xl-8 border-top border-light"
-        style={{ backgroundColor: "black" }}
-      >
+      <section className="py-4 py-md-5 py-xl-8 border-top border-light bg-black">
         <div className="container overflow-hidden">
           <div className="row gy-4 gy-lg-0 justify-content-xl-between text-white">
             <div className="col-12 col-md-4 col-lg-3 col-xl-2">
               <div className="widget">
-                <h4 className="widget-title mb-4" style={{ color: "#dcb14a" }}>
-                  Get in Touch
-                </h4>
+                <h4 className="widget-title mb-4 text-gold">Get in Touch</h4>
                 <address className="mb-4">
                   8014 Edith Blvd NE, Albuquerque, New York, United States
                 </address>
@@ -38,9 +33,7 @@ const Footer = () => {
             </div>
             <div className="col-12 col-md-4 col-lg-3 col-xl-2">
               <div className="widget">
-                <h4 className="widget-title mb-4" style={{ color: "#dcb14a" }}>
-                  Learn More
-                </h4>
+                <h4 className="widget-title mb-4 text-gold">Learn More</h4>
                 <ul className="list-unstyled">
                   <li className="mb-2">
                     <a
@@ -87,9 +80,7 @@ const Footer = () => {
             </div>
             <div className="col-12 col-lg-3 col-xl-4">
               <div className="widget">
-                <h4 className="widget-title mb-4" style={{ color: "#dcb14a" }}>
-                  Our Newsletter
-                </h4>
+                <h4 className="widget-title mb-4 text-gold">Our Newsletter</h4>
                 <p className="mb-4">
                   Subscribe to our newsletter to get our news &amp; discounts
                   delivered to you.
@@ -127,14 +118,7 @@ const Footer = () => {
                     </div>
                     <div className="col-12">
                       <div className="d-grid">
-                        <button
-                          className="btn"
-                          style={{
-                            backgroundColor: "#dcb14a",
-                            color: "black !important",
-                          }}
-                          type="submit"
-                        >
+                        <button className="secondary_btn" type="submit">
                           Subscribe
                         </button>
                       </div>
@@ -147,10 +131,7 @@ const Footer = () => {
         </div>
       </section>
       {/* Copyright - Bootstrap Brain Component */}
-      <div
-        className="py-4 py-md-5 py-xl-8 border-top border-light-subtle"
-        style={{ backgroundColor: "black" }}
-      >
+      <div className="py-4 py-md-5 py-xl-8 border-top border-light-subtle bg-black">
         <div className="container">
           <div className="row">
             <div className="col-12">
