@@ -1,9 +1,20 @@
 import React from "react";
+import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../store/CartContext";
 
 const Cart = () => {
   const { cart, total, removeFromCart } = useCartContext();
+
+  const buyMessage = () => {
+    Swal.fire({
+      icon: "success",
+      title: "Your order has been placed successfully.",
+      showConfirmButton: true,
+      confirmButtonColor: "#dcb14a",
+      timer: 3000,
+    });
+  };
 
   if (cart.length === 0) {
     return (
@@ -199,6 +210,7 @@ const Cart = () => {
                           data-mdb-ripple-init=""
                           className="btn btn-dark btn-lg btn-block "
                           data-mdb-ripple-color="dark"
+                          onClick={buyMessage}
                         >
                           Buy now
                         </button>
