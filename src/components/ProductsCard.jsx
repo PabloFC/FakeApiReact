@@ -83,13 +83,13 @@ const ProductsCard = ({ category }) => {
                         </a>
                       </div>
                     </div>
-                    <div className="col-md-6 col-lg-6 col-xl-6">
-                      <h5 style={{ textAlign: "left" }}>{product.title}</h5>
-                      <p className="mb-4 mb-md-0" style={{ textAlign: "left" }}>
-                        {truncateString(product.description, 150)}
+                    <div className="col-md-12 col-lg-6 col-xl-6 px-5 mt-2">
+                      <h5 className="pb-2">{product.title}</h5>
+                      <p className="mb-4 mb-md-0">
+                        {truncateString(product.description, 120)}
                       </p>
                     </div>
-                    <div className="col-md-6 col-lg-3 col-xl-3">
+                    <div className="col-md-12 col-lg-3 col-xl-3">
                       <div className="d-flex justify-content-center align-items-center mb-1">
                         <h4 className="mb-1 me-1">{product.price}€</h4>
                       </div>

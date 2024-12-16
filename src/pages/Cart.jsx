@@ -102,7 +102,7 @@ const Cart = () => {
                               ></button> */}
                               <input
                                 type="number"
-                                className="form-control form-control-sm mb-4"
+                                className="form-control form-control-sm"
                                 value={item.quantity}
                                 readOnly
                               />
