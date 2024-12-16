@@ -20,11 +20,7 @@ const Newsletter = () => {
                   placeholder="Enter your email address"
                   aria-describedby="button-addon2"
                 />
-                <button
-                  className="btn btn-dark"
-                  type="submit"
-                  style={{ backgroundColor: "black" }}
-                >
+                <button className="btn btn-dark" type="submit">
                   Subscribe
                 </button>
               </div>
