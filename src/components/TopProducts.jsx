@@ -59,9 +59,12 @@ const TopProducts = () => {
     <main className="py-5">
       <div className="container top_products">
         {products.map((product) => (
-          <div className="col-12 col-sm-3" key={product.id}>
+          <div
+            className="col-12 col-sm-3 animate__animated animate__fadeIn"
+            key={product.id}
+          >
             <div
-              className="card text-black d-flex justify-content-center align-items-center mt-2 py-2"
+              className="card text-black d-flex justify-content-center align-items-center mt-2 py-2 animate__animated animate__pulse"
               style={{
                 border: 0,
                 boxShadow: "0 4px 8px rgba(0, 0, 0, 0.05)",
@@ -69,7 +72,7 @@ const TopProducts = () => {
               }}
             >
               <img
-                className="img-fluid"
+                className="img-fluid animate__animated animate__fadeIn"
                 style={{
                   maxHeight: "100px",
                   maxWidth: "100px",
@@ -79,10 +82,12 @@ const TopProducts = () => {
               />
               <div className="card-body">
                 <div className="text-center">
-                  <h5 className="card-title py-3">
+                  <h5 className="card-title py-3 animate__animated animate__fadeInUp">
                     {truncateString(product.title, 18)}
                   </h5>
-                  <p className="text-muted mb-4">{product.price} €</p>
+                  <p className="text-muted mb-4 animate__animated animate__fadeIn">
+                    {product.price} €
+                  </p>
 
                   <button
                     className="btn btn-dark"
