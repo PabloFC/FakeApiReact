@@ -12,7 +12,7 @@ const TopProducts = () => {
     const fetchProducts = async () => {
       try {
         const response = await fetch(
-          "https://fakestoreapi.com/products?limit=8"
+          "https://fakestoreapi.com/products?limit=9"
         );
         const data = await response.json();
         // console.log(data);
@@ -57,7 +57,7 @@ const TopProducts = () => {
   };
   return (
     <main className="py-5">
-      <div className="container top_products">
+      <div className="container top_products gap-2">
         {products.map((product) => (
           <div
             className="col-12 col-sm-3 animate__animated animate__fadeIn"
@@ -67,12 +67,12 @@ const TopProducts = () => {
               className="card text-black d-flex justify-content-center align-items-center mt-2 py-2 animate__animated animate__pulse"
               style={{
                 border: 0,
-                boxShadow: "0 4px 8px rgba(0, 0, 0, 0.05)",
+                boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
                 minHeight: "300px",
               }}
             >
               <img
-                className="img-fluid animate__animated animate__fadeIn"
+                className="img-fluid animate__animated animate__fadeIn "
                 style={{
                   maxHeight: "100px",
                   maxWidth: "100px",
