@@ -171,11 +171,12 @@ a {
     background-position: 650px;
   }
   .hero_paragraph {
-    color: black !important;
+    color: transparent !important;
     font-weight: bold;
   }
   .hero_h1 {
     color: #dcb14a;
+    padding-bottom: 24px;
   }
 }
 @media only screen and (max-width: 992px) {
