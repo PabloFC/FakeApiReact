@@ -7,9 +7,9 @@ import CardCategoriesHome from "./CardCategoriesHome";
 
 const CategoriesHome = () => {
   return (
-    <section className="py-5">
+    <section className="py-5 bg-light">
       <div className="container">
-        <div className="card-group">
+        <div className="row g-4">
           {/* Electronics */}
           <CardCategoriesHome
             to="/electronics"

@@ -20,22 +20,26 @@ const Home = () => {
   }, [location]);
 
   return (
-    <>
+    <div className="home-page">
       <HeroHome />
-      <HeaderText
-        paragraph="Carefully created collections"
-        title="Browse our categories"
-      />
-      <CategoriesHome />
-      <HeaderText
-        paragraph="Top rated products"
-        title="Check out our top products"
-        id="topProducts"
-      />
-      <TopProducts />
+      <section className="section-spacing">
+        <HeaderText
+          paragraph="Carefully created collections"
+          title="Browse our categories"
+        />
+        <CategoriesHome />
+      </section>
+      <section className="section-spacing">
+        <HeaderText
+          paragraph="Top rated products"
+          title="Check out our top products"
+          id="topProducts"
+        />
+        <TopProducts />
+      </section>
       <Services />
       <Newsletter />
-    </>
+    </div>
   );
 };
 

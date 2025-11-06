@@ -12,7 +12,7 @@ const TopProducts = () => {
     const fetchProducts = async () => {
       try {
         const response = await fetch(
-          "https://fakestoreapi.com/products?limit=9"
+          "https://fakestoreapi.com/products?limit=8"
         );
         const data = await response.json();
         // console.log(data);
@@ -57,40 +57,32 @@ const TopProducts = () => {
   };
   return (
     <main className="py-5">
-      <div className="container top_products gap-2">
-        {products.map((product) => (
-          <div
-            className="col-12 col-sm-3 animate__animated animate__fadeIn"
-            key={product.id}
-          >
+      <div className="container">
+        <div className="row g-4">
+          {products.map((product) => (
             <div
-              className="card text-black d-flex justify-content-center align-items-center mt-2 py-2 animate__animated animate__pulse"
-              style={{
-                border: 0,
-                boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-                minHeight: "300px",
-              }}
+              className="col-12 col-sm-6 col-md-4 col-lg-3"
+              key={product.id}
             >
-              <img
-                className="img-fluid animate__animated animate__fadeIn "
-                style={{
-                  maxHeight: "100px",
-                  maxWidth: "100px",
-                }}
-                src={product.image}
-                alt={product.title}
-              />
-              <div className="card-body">
-                <div className="text-center">
-                  <h5 className="card-title py-3 animate__animated animate__fadeInUp">
+              <div className="card product-card h-100 shadow-sm">
+                <div className="bg-light d-flex align-items-center justify-content-center p-4" style={{ height: "220px" }}>
+                  <img
+                    className="img-fluid product-image"
+                    style={{ maxHeight: "100%", maxWidth: "100%", objectFit: "contain" }}
+                    src={product.image}
+                    alt={product.title}
+                    loading="lazy"
+                  />
+                </div>
+                <div className="card-body d-flex flex-column">
+                  <h5 className="card-title fw-semibold mb-2" style={{ minHeight: "2.8rem", display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
                     {truncateString(product.title, 18)}
                   </h5>
-                  <p className="text-muted mb-4 animate__animated animate__fadeIn">
+                  <p className="fs-4 fw-bold text-gold mb-3">
                     {product.price} €
                   </p>
-
                   <button
-                    className="btn btn-dark"
+                    className="btn btn-dark product-btn mt-auto"
                     type="button"
                     onClick={() => handleAddToCart(product)}
                   >
@@ -99,8 +91,8 @@ const TopProducts = () => {
                 </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </main>
   );
