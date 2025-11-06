@@ -53,63 +53,42 @@ const ProductsCard = ({ category }) => {
   };
 
   return (
-    <div id="electronics">
-      {products.map((product) => (
-        <div key={product.id} className="container py-2 mt-2">
-          <div className="row justify-content-center mb-3">
-            <div className="col-12">
-              <div
-                className="card rounded-3 border_cards"
-                style={{ boxShadow: "0 4px 8px rgba(0, 0, 0, 0.09)" }}
-              >
-                <div className="card-body">
-                  <div className="row">
-                    <div className="col-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
-                      <div className="bg-image hover-zoom ripple rounded ripple-surface text-center">
-                        <img
-                          src={product.image}
-                          alt={product.title}
-                          className="img-fluid img_products"
-                        />
-                        <a href="#">
-                          <div className="hover-overlay">
-                            <div
-                              className="mask"
-                              style={{
-                                backgroundColor: "rgba(253, 253, 253, 0.15)",
-                              }}
-                            ></div>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                    <div className="col-md-12 col-lg-6 col-xl-6 px-5 mt-2">
-                      <h5 className="pb-2">{product.title}</h5>
-                      <p className="mb-4 mb-md-0">
-                        {truncateString(product.description, 120)}
-                      </p>
-                    </div>
-                    <div className="col-md-12 col-lg-3 col-xl-3">
-                      <div className="d-flex justify-content-center align-items-center mb-1">
-                        <h4 className="mb-1 me-1">{product.price}€</h4>
-                      </div>
-                      <div className="d-flex flex-column mt-2">
-                        <button
-                          className="btn btn-dark"
-                          type="button"
-                          onClick={() => handleAddToCart(product)}
-                        >
-                          Add to cart
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+    <div className="container">
+      <div className="row g-4">
+        {products.map((product) => (
+          <div
+            key={product.id}
+            className="col-12 col-sm-6 col-md-4 col-lg-3"
+          >
+            <div className="card product-card h-100 shadow-sm">
+              <div className="bg-light d-flex align-items-center justify-content-center p-4" style={{ height: "220px" }}>
+                <img
+                  className="img-fluid product-image"
+                  style={{ maxHeight: "100%", maxWidth: "100%", objectFit: "contain" }}
+                  src={product.image}
+                  alt={product.title}
+                  loading="lazy"
+                />
+              </div>
+              <div className="card-body d-flex flex-column">
+                <h5 className="card-title fw-semibold mb-2" style={{ minHeight: "2.8rem", display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
+                  {product.title}
+                </h5>
+                <p className="fs-4 fw-bold text-gold mb-3">
+                  {product.price} €
+                </p>
+                <button
+                  className="btn btn-dark product-btn mt-auto"
+                  type="button"
+                  onClick={() => handleAddToCart(product)}
+                >
+                  Add to cart
+                </button>
               </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };
