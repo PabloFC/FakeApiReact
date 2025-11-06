@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 import HeroCategories from "../components/HeroCategories";
 import HeaderText from "../components/HeaderText";
 import ProductsCard from "../components/ProductsCard";
@@ -31,19 +31,12 @@ const categoryConfig = {
 };
 
 const Category = () => {
-  const location = useLocation();
-  // Extraer el nombre de la categoría de la URL (ej: /electronics -> electronics)
-  const categoryName = location.pathname.slice(1); // Remover el "/"
+  const { categoryName } = useParams();
   const config = categoryConfig[categoryName];
 
-  // Si la categoría no existe, mostrar error
+  // Si la categoría no existe, redirigir a home
   if (!config) {
-    return (
-      <div className="container py-5 text-center">
-        <h1>Category not found</h1>
-        <p>The category you're looking for doesn't exist.</p>
-      </div>
-    );
+    return <Navigate to="/" replace />;
   }
 
   return (

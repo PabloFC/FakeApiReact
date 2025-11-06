@@ -12,11 +12,8 @@ const AppRoute = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/electronics" element={<Category />} />
-        <Route path="/jewelry" element={<Category />} />
-        <Route path="/men" element={<Category />} />
-        <Route path="/women" element={<Category />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/:categoryName" element={<Category />} />
       </Routes>
       <Footer />
     </BrowserRouter>
