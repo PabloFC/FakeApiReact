@@ -81,7 +81,7 @@ const Cart = () => {
                             </div>
                             <div className="col-md-2 col-lg-2 col-xl-2">
                               <img
-                                src={item.image}
+                                src={item.thumbnail}
                                 className="img-fluid rounded-3 imgMobile"
                                 alt={item.title}
                               />
@@ -94,12 +94,6 @@ const Cart = () => {
                               <h6 className="mb-4">{item.title}</h6>
                             </div>
                             <div className="col-md-3 col-lg-3 col-xl-2">
-                              {/* <button
-                                className="btn btn-link px-2 "
-                                onClick={() =>
-                                  updateQuantity(item.id, item.quantity - 1)
-                                }
-                              ></button> */}
                               <input
                                 type="number"
                                 className="form-control form-control-sm"

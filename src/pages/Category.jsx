@@ -13,11 +13,6 @@ const categoryConfig = {
     title: "Electronics",
     category: "electronics",
   },
-  jewelry: {
-    heroClass: "hero_jewelry",
-    title: "Jewelry",
-    category: "jewelery",
-  },
   men: {
     heroClass: "hero_men",
     title: "Men",
@@ -60,4 +55,3 @@ const Category = () => {
 };
 
 export default Category;
-

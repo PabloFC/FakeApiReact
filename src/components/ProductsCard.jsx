@@ -9,20 +9,51 @@ const ProductsCard = ({ category }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // Mapeo de categorías de fakestoreapi a dummyjson
+        // Mapeo de categorías con múltiples subcategorías válidas de DummyJSON
         const categoryMap = {
-          electronics: "laptops",
-          jewelery: "womens-jewellery",
-          "men's clothing": "mens-shirts",
-          "women's clothing": "womens-dresses",
+          electronics: ["laptops", "smartphones", "tablets"],
+          "men's clothing": [
+            "mens-shirts",
+            "mens-shoes",
+            "mens-watches",
+            "fragrances",
+          ],
+          "women's clothing": [
+            "womens-dresses",
+            "womens-shoes",
+            "womens-bags",
+            "womens-jewellery",
+          ],
         };
 
-        const mappedCategory = categoryMap[category] || "smartphones";
-        const response = await fetch(
-          `https://dummyjson.com/products/category/${mappedCategory}`
+        const categories = categoryMap[category] || ["smartphones"];
+
+        // Fetch múltiples categorías en paralelo con manejo de errores
+        const promises = categories.map((cat) =>
+          fetch(`https://dummyjson.com/products/category/${cat}`)
+            .then((res) => {
+              if (!res.ok) throw new Error(`Category ${cat} not found`);
+              return res.json();
+            })
+            .catch((error) => {
+              console.warn(`Error fetching ${cat}:`, error);
+              return { products: [] };
+            })
         );
-        const data = await response.json();
-        setProducts(data.products);
+
+        const results = await Promise.all(promises);
+
+        // Tomar productos variados (3-4 de cada categoría)
+        const variedProducts = [];
+        const productsPerCategory = Math.ceil(12 / categories.length);
+
+        results.forEach((data) => {
+          if (data.products.length > 0) {
+            variedProducts.push(...data.products.slice(0, productsPerCategory));
+          }
+        });
+
+        setProducts(variedProducts);
       } catch (error) {
         console.error("Error: ", error);
       }

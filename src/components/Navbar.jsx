@@ -96,16 +96,6 @@ const Navbar = () => {
                   </Link>
                   <div className="dropdown-divider my-1"></div>
                   <Link
-                    to="/jewelry"
-                    className={`dropdown-item py-2 ${
-                      isActive("/jewelry") ? "active text-gold" : ""
-                    }`}
-                  >
-                    <i className="bi bi-gem me-2"></i>
-                    Jewelry
-                  </Link>
-                  <div className="dropdown-divider my-1"></div>
-                  <Link
                     to="/men"
                     className={`dropdown-item py-2 ${
                       isActive("/men") ? "active text-gold" : ""
