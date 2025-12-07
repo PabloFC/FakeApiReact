@@ -12,12 +12,7 @@ const ProductsCard = ({ category }) => {
         // Mapeo de categorías con múltiples subcategorías válidas de DummyJSON
         const categoryMap = {
           electronics: ["laptops", "smartphones", "tablets"],
-          "men's clothing": [
-            "mens-shirts",
-            "mens-shoes",
-            "mens-watches",
-            "fragrances",
-          ],
+          "men's clothing": ["mens-shirts", "mens-shoes", "mens-watches"],
           "women's clothing": [
             "womens-dresses",
             "womens-shoes",
@@ -32,7 +27,10 @@ const ProductsCard = ({ category }) => {
         const promises = categories.map((cat) =>
           fetch(`https://dummyjson.com/products/category/${cat}`)
             .then((res) => {
-              if (!res.ok) throw new Error(`Category ${cat} not found`);
+              if (!res.ok) {
+                console.warn(`Category ${cat} not found (404)`);
+                return { products: [] };
+              }
               return res.json();
             })
             .catch((error) => {
@@ -48,7 +46,7 @@ const ProductsCard = ({ category }) => {
         const productsPerCategory = Math.ceil(12 / categories.length);
 
         results.forEach((data) => {
-          if (data.products.length > 0) {
+          if (data.products && data.products.length > 0) {
             variedProducts.push(...data.products.slice(0, productsPerCategory));
           }
         });

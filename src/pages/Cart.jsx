@@ -18,11 +18,30 @@ const Cart = () => {
 
   if (cart.length === 0) {
     return (
-      <div className="cart-container  d-flex flex-column align-items-center container py-5 h-100">
-        <h1>Your cart is empty</h1>
-        <h6 className="py-3">There are no products selected.</h6>
-        <Link to="/#topProducts" className="secondary_btn">
-          Continue Shopping
+      <div
+        className="cart-container d-flex flex-column align-items-center justify-content-center container py-5"
+        style={{ minHeight: "60vh" }}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="80"
+          height="80"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="text-muted mb-4"
+        >
+          <circle cx="9" cy="21" r="1" />
+          <circle cx="20" cy="21" r="1" />
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+        </svg>
+        <h1 className="mb-3">Your cart is empty</h1>
+        <p className="text-muted mb-4">Add some products to get started!</p>
+        <Link to="/" className="btn btn-dark px-4 py-2">
+          Start Shopping
         </Link>
       </div>
     );

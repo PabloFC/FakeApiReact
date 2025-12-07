@@ -29,12 +29,8 @@ const Home = () => {
         />
         <CategoriesHome />
       </section>
-      <section className="section-spacing">
-        <HeaderText
-          paragraph="Top rated products"
-          title="Check out our top products"
-          id="topProducts"
-        />
+      <section className="section-spacing" id="topProducts">
+        <HeaderText paragraph="Featured Collection" title="Premium Products" />
         <TopProducts />
       </section>
       <Services />

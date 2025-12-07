@@ -59,7 +59,7 @@ const Navbar = () => {
               <li className="nav-item">
                 <Link
                   to="/#topProducts"
-                  className={`nav-link ${
+                  className={`nav-link fs-6 ${
                     isActive("/#topProducts") ? "active" : ""
                   }`}
                 >
@@ -70,7 +70,7 @@ const Navbar = () => {
               {/* Dropdown de categorías */}
               <li className="nav-item dropdown">
                 <a
-                  className="nav-link dropdown-toggle d-flex align-items-center"
+                  className="nav-link dropdown-toggle d-flex align-items-center fs-6"
                   id="categoriesDropdown"
                   href="#"
                   role="button"
@@ -87,7 +87,7 @@ const Navbar = () => {
                 >
                   <Link
                     to="/electronics"
-                    className={`dropdown-item py-2 ${
+                    className={`dropdown-item py-2 fs-6 ${
                       isActive("/electronics") ? "active text-gold" : ""
                     }`}
                   >
@@ -97,7 +97,7 @@ const Navbar = () => {
                   <div className="dropdown-divider my-1"></div>
                   <Link
                     to="/men"
-                    className={`dropdown-item py-2 ${
+                    className={`dropdown-item py-2 fs-6 ${
                       isActive("/men") ? "active text-gold" : ""
                     }`}
                   >
@@ -107,7 +107,7 @@ const Navbar = () => {
                   <div className="dropdown-divider my-1"></div>
                   <Link
                     to="/women"
-                    className={`dropdown-item py-2 ${
+                    className={`dropdown-item py-2 fs-6 ${
                       isActive("/women") ? "active text-gold" : ""
                     }`}
                   >
@@ -118,7 +118,7 @@ const Navbar = () => {
               </li>
 
               <li className="nav-item">
-                <a className="nav-link" href="#contact">
+                <a className="nav-link fs-6" href="#contact">
                   Contact
                 </a>
               </li>
@@ -138,7 +138,7 @@ const Navbar = () => {
               <li className="nav-item">
                 <Link
                   to="/cart"
-                  className={`nav-link d-flex align-items-center ${
+                  className={`nav-link d-flex align-items-center fs-6 ${
                     isActive("/cart") ? "active" : ""
                   }`}
                 >
@@ -148,7 +148,7 @@ const Navbar = () => {
                     <span
                       className="badge rounded-pill bg-danger ms-2"
                       style={{
-                        fontSize: "0.65rem",
+                        fontSize: "0.7rem",
                       }}
                     >
                       {getCartCount()}
@@ -158,7 +158,7 @@ const Navbar = () => {
               </li>
               <li className="nav-item">
                 <a
-                  className="nav-link d-flex align-items-center"
+                  className="nav-link d-flex align-items-center fs-6"
                   href="#"
                   role="button"
                 >
