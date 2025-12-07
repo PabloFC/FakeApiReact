@@ -12,11 +12,32 @@ const TopProducts = () => {
     const fetchProducts = async () => {
       try {
         const response = await fetch(
-          "https://fakestoreapi.com/products?limit=8"
+          "https://dummyjson.com/products?limit=30&sortBy=price&order=desc"
         );
         const data = await response.json();
-        // console.log(data);
-        setProducts(data);
+
+        // Filtrar para obtener productos más variados de diferentes categorías
+        const seenCategories = new Set();
+        const variedProducts = data.products.filter((product) => {
+          if (
+            seenCategories.size < 8 &&
+            !seenCategories.has(product.category)
+          ) {
+            seenCategories.add(product.category);
+            return true;
+          }
+          return false;
+        });
+
+        // Si no hay suficientes productos únicos, rellenar con los más caros
+        if (variedProducts.length < 8) {
+          const remaining = data.products
+            .filter((p) => !variedProducts.includes(p))
+            .slice(0, 8 - variedProducts.length);
+          variedProducts.push(...remaining);
+        }
+
+        setProducts(variedProducts.slice(0, 8));
       } catch (error) {
         console.error("Error: ", error);
       }
@@ -32,7 +53,7 @@ const TopProducts = () => {
   const handleAddToCart = (product) => {
     addToCart(product);
     Swal.fire({
-      imageUrl: product.image,
+      imageUrl: product.thumbnail,
       imageHeight: 120,
       imageWidth: 120,
       title: "Product added to cart!",
@@ -60,22 +81,35 @@ const TopProducts = () => {
       <div className="container">
         <div className="row g-4">
           {products.map((product) => (
-            <div
-              className="col-12 col-sm-6 col-md-4 col-lg-3"
-              key={product.id}
-            >
+            <div className="col-12 col-sm-6 col-md-4 col-lg-3" key={product.id}>
               <div className="card product-card h-100 shadow-sm">
-                <div className="bg-light d-flex align-items-center justify-content-center p-4" style={{ height: "220px" }}>
+                <div
+                  className="bg-light d-flex align-items-center justify-content-center p-4"
+                  style={{ height: "220px" }}
+                >
                   <img
                     className="img-fluid product-image"
-                    style={{ maxHeight: "100%", maxWidth: "100%", objectFit: "contain" }}
-                    src={product.image}
+                    style={{
+                      maxHeight: "100%",
+                      maxWidth: "100%",
+                      objectFit: "contain",
+                    }}
+                    src={product.thumbnail}
                     alt={product.title}
                     loading="lazy"
                   />
                 </div>
                 <div className="card-body d-flex flex-column">
-                  <h5 className="card-title fw-semibold mb-2" style={{ minHeight: "2.8rem", display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
+                  <h5
+                    className="card-title fw-semibold mb-2"
+                    style={{
+                      minHeight: "2.8rem",
+                      display: "-webkit-box",
+                      WebkitLineClamp: 2,
+                      WebkitBoxOrient: "vertical",
+                      overflow: "hidden",
+                    }}
+                  >
                     {truncateString(product.title, 18)}
                   </h5>
                   <p className="fs-4 fw-bold text-gold mb-3">

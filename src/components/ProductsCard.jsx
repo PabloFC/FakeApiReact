@@ -9,17 +9,26 @@ const ProductsCard = ({ category }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        // Mapeo de categorías de fakestoreapi a dummyjson
+        const categoryMap = {
+          electronics: "laptops",
+          jewelery: "womens-jewellery",
+          "men's clothing": "mens-shirts",
+          "women's clothing": "womens-dresses",
+        };
+
+        const mappedCategory = categoryMap[category] || "smartphones";
         const response = await fetch(
-          `https://fakestoreapi.com/products/category/${category}`
+          `https://dummyjson.com/products/category/${mappedCategory}`
         );
         const data = await response.json();
-        setProducts(data);
+        setProducts(data.products);
       } catch (error) {
         console.error("Error: ", error);
       }
     };
     fetchData();
-  }, []);
+  }, [category]);
 
   function truncateString(str, maxLength) {
     return str.length > maxLength ? str.substring(0, maxLength) + "..." : str;
@@ -28,7 +37,7 @@ const ProductsCard = ({ category }) => {
   const handleAddToCart = (product) => {
     addToCart(product);
     Swal.fire({
-      imageUrl: product.image,
+      imageUrl: product.thumbnail,
       imageHeight: 120,
       imageWidth: 120,
       title: "Product added to cart!",
@@ -56,27 +65,38 @@ const ProductsCard = ({ category }) => {
     <div className="container">
       <div className="row g-4">
         {products.map((product) => (
-          <div
-            key={product.id}
-            className="col-12 col-sm-6 col-md-4 col-lg-3"
-          >
+          <div key={product.id} className="col-12 col-sm-6 col-md-4 col-lg-3">
             <div className="card product-card h-100 shadow-sm">
-              <div className="bg-light d-flex align-items-center justify-content-center p-4" style={{ height: "220px" }}>
+              <div
+                className="bg-light d-flex align-items-center justify-content-center p-4"
+                style={{ height: "220px" }}
+              >
                 <img
                   className="img-fluid product-image"
-                  style={{ maxHeight: "100%", maxWidth: "100%", objectFit: "contain" }}
-                  src={product.image}
+                  style={{
+                    maxHeight: "100%",
+                    maxWidth: "100%",
+                    objectFit: "contain",
+                  }}
+                  src={product.thumbnail}
                   alt={product.title}
                   loading="lazy"
                 />
               </div>
               <div className="card-body d-flex flex-column">
-                <h5 className="card-title fw-semibold mb-2" style={{ minHeight: "2.8rem", display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
+                <h5
+                  className="card-title fw-semibold mb-2"
+                  style={{
+                    minHeight: "2.8rem",
+                    display: "-webkit-box",
+                    WebkitLineClamp: 2,
+                    WebkitBoxOrient: "vertical",
+                    overflow: "hidden",
+                  }}
+                >
                   {product.title}
                 </h5>
-                <p className="fs-4 fw-bold text-gold mb-3">
-                  {product.price} €
-                </p>
+                <p className="fs-4 fw-bold text-gold mb-3">{product.price} €</p>
                 <button
                   className="btn btn-dark product-btn mt-auto"
                   type="button"
